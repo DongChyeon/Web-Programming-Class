@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Open challenge 6</title>
+        <script>
+            function printStar(n) {
+                // parseInt만으로는 실수를 입력해도 소수점 아래를 버려 정수로 만들기에 실수를 못 걸러냄
+                var m = parseFloat(n);
+                if (isNaN(n) || m % 1 > 0 || m < 0) {
+                    document.write("<h3>입력 오류 입니다.<h3>");
+                    return;
+                }
+                for (var i = 0; i < m; i++) {
+                    for (var j = 0; j < i + 1; j++) {
+                        document.write("*");
+                    }
+                    document.write("<br>");
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <h2>별 문자 출력하기</h2>
+        <hr>
+        <script>
+            var n = prompt("정수를 입력하세요.", "");
+            printStar(n);
+        </script>
+    </body>
+</html>

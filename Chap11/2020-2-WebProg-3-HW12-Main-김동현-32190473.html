@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Open Challenge 11</title>
+    </head>
+    <body>
+        <h3>학점 별로 학생 수를 입력하면 파이 차트로 비율 그리기</h3>
+        <hr>
+        A <input id="A" type="number" min="0" value="0"> B<input id="B" type="number" min="0" value="0"> C<input id="C" type="number" min="0" value="0"> D<input id="D" type="number" min="0" value="0"> F<input id="F" type="number" min="0" value="0"> 
+        <input type="button" value="차트그리기" onclick="drawChart()"><br><br>
+        <canvas id="myCanvas" style="background-color:aliceblue" width="800" height="500"></canvas>
+        <script>
+            var canvas = document.getElementById("myCanvas");
+            var context = canvas.getContext("2d");
+
+            var colors = ["blue", "green", "yellow", "magenta", "red"];
+            var grades = ["A", "B", "C", "D", "F"];
+            
+            function drawChart() {
+                var scores = new Array();
+                var sum = 0;
+
+                for (var i = 0; i < grades.length; i++) {
+                    scores[i] = parseInt(document.getElementById(grades[i]).value);
+                    sum += scores[i];
+                }
+
+                var centerX = canvas.width / 2;
+                var centerY = canvas.height / 2;
+                
+                var startAngle = 0;
+                var endAngle = 0;
+            
+                context.clearRect(0, 0, canvas.width, canvas.height);
+
+                context.font = "20px Gothic";
+                context.textAlign = "left";
+
+                for (var i = 0; i < colors.length; i++) {
+                    context.fillStyle = "blue";
+                    context.fillText(grades[i] + " 학점" + Math.round((scores[i] / sum) * 100) + "% : " + colors[i], 10, 40 + 20*i);
+
+                    context.beginPath();
+                    context.moveTo(centerX, centerY);
+                    startAngle = endAngle;
+                    endAngle += (2*Math.PI) * (scores[i] / sum);
+                    context.arc(centerX, centerY, 200, startAngle, endAngle);
+                    context.closePath();
+                    context.fillStyle = colors[i];
+                    context.fill();
+                }
+            }
+        </script>
+    </body>
+</html>

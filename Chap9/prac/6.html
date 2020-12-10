@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>마우스 휠을 이용한 이미지 확대/축소</title>
+        <script>
+            var width=200;
+            var height=100;
+            function wheel(e, obj) {
+
+                if (e.wheelDelta < 0) {
+                    height--;
+                    width-=2;
+                    if (width < 0) {
+                        width = 0;
+                    }
+                } else {
+                    height++;
+                    width+=2;
+                }
+                obj.width = width;
+                obj.height = height;
+            }
+        </script>
+    </head>
+    <body>
+        <h3>마우스 휠을 이용한 이미지 확대/축소</h3>
+        <hr>
+        이미지 위에 휠을 굴리면 이미지가 축소되고 아래로 굴리면 이미지가 확대됩니다.
+        <img id="img" onwheel="wheel(event, this)" src="../media/android.png">
+    </body>
+</html>

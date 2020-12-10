@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>클릭하면 2,3,4배로 옆으로 늘어납니다.</title>
+        <script>
+            var n=2;
+            function enlarge(obj) {
+                obj.style.transform = "scale(" + n++ + "," + "1)";
+            }
+        </script>
+    </head>
+    <body>
+        <h3>클릭하면 2,3,4배로 옆으로 늘어납니다.</h3>
+        <hr>
+        <img src="../media/spade-7.png" onclick="enlarge(this)" width="100" height="140" alt="spade-7">
+    </body>
+</html>

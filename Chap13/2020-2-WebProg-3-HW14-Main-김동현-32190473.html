@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>오디오 리스트 연속 재생</title>
+    </head>
+    <body>
+        <h3>오디오 리스트 연속 재생</h3>
+        <hr>
+        <p>처음 play 버튼을 누르면 리스트에 있는 곡이 연속하여 자동 재생 됩니다. 마우스로 다른 곡을 선태갛면 곡이 바뀝니다. next 버튼을 누르면 다음 곡으로 넘어갑니다.</p>
+        <hr>
+        <audio id="audio" controls><source type="audio/mp3">브라우저가 audio 태그를 지원하지 않습니다.</audio>
+        <p>
+            <select id="select" size=3 onchange="play(select.selectedIndex)">
+                <option value="audio/Instant - Nettson · [Free Copyright-safe Music].mp3">Instant - Nettson · [Free Copyright-safe Music]</option>
+                <option value="audio/Puzzle - Roa · [Free Copyright-safe Music].mp3">Puzzle - Roa · [Free Copyright-safe Music]</option>
+                <option value="audio/Ready for Summer - Roa · [Free Copyright-safe Music].mp3">Ready for Summer - Roa · [Free Copyright-safe Music]</option>
+            </select>
+            <button id="play" onclick="control(event)">play</button>
+            <button id="next" onclick="control(event)">next</button>
+        </p>
+        <div id="msg">현재 연주되는 곡명이 보입니다.</div>
+        <script>
+            var msg = document.getElementById("msg");
+            var audio = document.getElementById("audio");
+            var select = document.getElementById("select");
+            var index = 0;
+
+            function control(e) {
+                if (e.target.id == "play") {
+                    play(index);
+                } else if (e.target.id == "next") {
+                    playNext();
+                }
+            }
+
+            function playNext() {
+                index++;
+                index = index % select.length;
+                play(index);
+                select.selectedIndex = index;
+            }
+
+            function play(index) {
+                audio.src = select.options[index].value;
+                audio.load();
+                audio.play();
+                msg.innerHTML = select.options[index].value;
+            }
+
+            audio.onended = function (e) {
+                playNext();
+            }
+        </script>
+    </body>
+</html>

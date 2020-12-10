@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>셀렉터 만들기</title>
+        <style>
+            .warning {
+                color: red;
+            }
+            body.main {
+                background: aliceblue;
+            }
+            #list {
+                background: mistyrose;
+            }
+            ul strong {
+                color:dodgerblue;
+            }
+            div > strong {
+                background: yellow;
+            }
+            h3:first-letter { color: red; }
+            li:hover { background: yellowgreen; }
+        </style>
+    </head>
+    <body class="main">
+        <h3>Web Programming</h3>
+        <hr>
+        <div>
+            <div>2학기 <strong>학습 내용</strong></div>
+            <ul id="list">
+                <li>HTML</li>
+                <li><strong>CSS</strong></li>
+                <li>JAVASCRIPT</li>
+            </ul>
+        </div>
+        <div class="warning">60점 이하는 F!</div>
+    </body>
+</html>

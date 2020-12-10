@@ -1,0 +1,54 @@
+html,body {
+    height : 100%;
+    width : 100%;    
+    margin : 0px;
+    padding : 0px;
+}
+h1 {
+	margin : 0px;
+	padding : 0px;
+	text-align : center;
+	color : black;
+}
+header {
+	float : right;
+	width : 100%;
+	position : relative;
+	background : green;
+}
+nav {
+	float : left;
+	position : relative;
+	background : orange;
+	width : 11%;
+	height : 100%;
+}
+body {
+	background-color : skyblue; 
+	color : white;
+}
+a {
+	text-decoration: none
+}
+section {
+	float : right;
+	position : relative;
+	position : right;
+	width : 89%;
+	height : 100%;
+}
+footer {
+	float : bottom;
+	position : relative;
+	background-color : purple;
+	color : black;
+	clear : both;
+	padding : 15px; 
+}
+.p1 {
+	text-indent : 1em;
+}
+p, ul {
+	font-family : "나눔손글씨 딸에게 엄마가";
+	font-size : 1.5em;
+}

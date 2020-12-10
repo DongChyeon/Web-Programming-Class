@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Open challenge 5</title>
+<link href="2020-2-WebProg-3-HW5-MainCSS-김동현-32190473.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+	<header>
+		<h1>CPU</h1>
+		<audio src="아이유-시간의 바깥.mp3" autoplay loop></audio>
+		<p class="p1">CPU는 'Central Processing Unit'의 약자로서, 직역하면 중앙처리장치이다. CPU는 컴퓨터의 두뇌에 해당하며, 사용자로부터 입력받은 명령어를 해석, 연산한 후 그 결과를 출력하는 역할을 한다. 이렇게 하나의 부품에 연산 장치, 해독 장치, 제어 장치 등이 집적되어 있는 형태를 일컬어 ‘마이크로프로세서(Micro-processor)’라고도 한다.</p>
+	</header>
+<nav>
+	<h2>목차</h2>
+	<ul>
+		<li><a href="#chap1">CPU의 구조</a>
+		<li><a href="#chap2">CPU의 명령 주기</a>
+		<li><a href="#chap3">대표적인 제품들</a>
+	</ul>
+</nav>
+<section>
+	<article>
+	<h2 id="chap1"><a href="https://namu.wiki/w/CPU/%EA%B5%AC%EC%A1%B0%EC%99%80%20%EC%9B%90%EB%A6%AC" target="_blank">CPU의 구조</a></h2>
+	<p class ="p1">CPU의 기본 구성으로는 레지스터, 프로그램 카운터, 명령어 레지스터, 산술논리연산장치(ALU), 제어부와 내부 버스 등이 있다. 몇가지 간단히 설명해보자면 레지스터는 연산유닛과 연결된 액세스속도가 가장 빠른 기억장치, 프로그램 카운터는 다음에 인출할 명령어의 주소를 가지고 있는 레지스터, 명령어 레지스터는 현재 실행 중인 명령의 내용을 기억하고 있는 레지스터, 산술논리연산장치는 각종 산술연산과 논리연산을 수행하는 역할을 한다.</p>
+	</article>
+	<article>
+	<h2 id="chap2"><a href="https://namu.wiki/w/CPU/%EA%B5%AC%EC%A1%B0%EC%99%80%20%EC%9B%90%EB%A6%AC" target="_blank">CPU의 명령 주기</a></h2>
+	<table>
+		<tbody>
+			<tr>
+			<td><a href="https://namu.wiki/w/%ED%8C%8C%EC%9D%BC:attachment/CPU/basic-instruction-processing-cycle.jpg" target="_blank">CPU의 명령 주기 그림</a></td>
+			<td><p class ="p1">CPU의 명령 주기는 다음 4가지로 요약해볼 수 있다.</p>
+			<ul>
+				<li>인출(Fetch) : 메모리상의 프로그램 카운터가 가리키는 명령엉를 CPU로 인출하여 적재</li>
+				<li>해석(Decode) : 명령어의 해석, 명령어의 종류와 타겟 등을 판단.</li>
+				<li>실행(Execute) : 해석된 명령어에 따라 데이터에 대한 연산 수행</li>
+				<li>쓰기(Writeback) : 명령어대로 처리 완료된 데이터를 메모리에 기록.</li>
+			</ul></td>
+			</tr>
+		</tbody>
+	</table>
+	<p>그림 출처 : <a href="https://namu.wiki/w/%ED%8C%8C%EC%9D%BC:attachment/CPU/basic-instruction-processing-cycle.jpg" target="_blank">https://namu.wiki/w/%ED%8C%8C%EC%9D%BC:attachment/CPU/basic-instruction-processing-cycle.jpg</a></p>
+	</article>
+	<article>
+	<h2 id="chap3">대표적인 제품들</h2>
+	<table>
+		<tr>
+			<td><a href="https://postfiles.pstatic.net/MjAyMDA4MjZfMzcg/MDAxNTk4NDExMDEyMDMx.8XXHFDv33ucHChlE9uNqj9owfQb42_XCJiT6OuCFcbIg.XVSoYMO7416mlZDufDs-sVtflz54aWPSLxOYKPNBLygg.JPEG.sungkyu7906/SE-cfbb137a-31d4-4478-9051-a78782d34a43.jpg?type=w773" target="_blank">intel사의 i9 cpu</a><td>
+			<td><a href="http://blog.naver.com/storyphoto/viewer.jsp?src=https%3A%2F%2Fblogfiles.pstatic.net%2FMjAyMDA1MThfMTI1%2FMDAxNTg5NzkyNjAyNTc2.h4NM4JNYvejJNvuxtY9NoD2TJoSTMcsE5jTXha6ZKOAg.DCHioJ8E2nfO07ryLToVMwgJ2-oZ-WZWmMXGDePK3O8g.JPEG.ter00000%2F20200518_8_DSC_4703.JPG" target="_blank">amd사의 Ryzen 7 cpu</a></td>
+		</tr>
+		<tr>
+			<td>왼쪽 intel사의 i9 cpu</td>
+			<td>오른쪽 amd사의 Ryzen 7 cpu</td>
+		</tr>
+	</table>
+	<p>왼쪽 그림 출처 : <a href="https://blog.naver.com/sungkyu7906/222071352850" target="_blank">https://blog.naver.com/sungkyu7906/222071352850</a><br>오른쪽 그림 출처 : <a href="https://blog.naver.com/ter00000/221968946195" target="_blank">https://blog.naver.com/ter00000/221968946195</a></p>
+	</article>
+</section>
+<footer>
+	<a href="./2020-2-WebProg-3-HW4-4Survey-김동현-32190473.html">설문조사</a>
+	<h3>Copyright 2020 by Donghyeon</h3>
+</footer>
+</body>
+</html>

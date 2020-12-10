@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>setTimeOut()으로 웹 페이지 자동 연결</title>
+    </head>
+    <body>
+        <h3>이미지에 마우스를 올리고 5초간 그대로 있을 때 웹페이지로 이동합니다</h3>
+        <hr>
+        <img id="img" src="media/android.png" onmouseover="startTimer(5000)" onmouseout="cancelTimer()">
+        <script>
+            var timeID = null;
+            function startTimer(time) {
+                timerID = setTimeout("load('http://www.naver.com')", time);
+                document.getElementById("img").title = "타이머 작동 시작...";
+            }
+            function cancelTimer() {
+                if (timeID != null) {
+                    clearTimeout(timeID);
+                }
+            }
+            function load(url) {
+                window.location = url;
+            }
+        </script>
+    </body>
+
+</html>

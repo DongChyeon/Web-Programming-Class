@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>큰 자리수와 낮은자리수 같은지 비교</title>
+    </head>
+    <body>
+        <h3>큰 자리수와 낮은자리수 같은지 비교</h3>
+        <hr>
+        <script>
+            function isEqual(n) {
+                var n = parseInt(n);
+                var first; 
+                var last = n % 10;
+                
+                while(n != 0) {
+			        first = n % 10;
+			        n = Math.floor(n/10);
+                }
+                
+                if (first == last) return true;
+                return false;
+            }
+            var n = prompt("숫자 입력", "");
+            if (isEqual(n)) document.write(n + ": 같음");
+            else document.write(n + ": 다름");
+        </script>
+    </body>
+</html>

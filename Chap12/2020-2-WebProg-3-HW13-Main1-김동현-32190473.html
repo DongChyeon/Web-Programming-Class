@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Open Challenge 12</title>
+    </head>
+    <body>
+        <h3>나의 단어장 만들기</h3>
+        <hr>
+        영어 <input id="english" type="text"><br>
+        한글 <input id="korean" type="text"><br><br>
+        <button id="save" onclick="save()">단어 저장</button>
+        <button id="search" onclick="search()">영단어 검색</button>
+        <button id="remove" onclick="remove()">단어 삭제</button>
+        <button id="viewAll" onclick="viewAll()">전체 보기</button>
+        <script>
+            var english = document.getElementById("english");
+            var korean = document.getElementById("korean");
+
+            function save() {
+                if (!window.localStorage) {
+                    alert("로컬스토리지를 지원하지 않습니다.");
+                    return;
+                }
+                if (localStorage.getItem(english.value) != null) {
+                    if (!confirm(english.value + "가 이미 있습니다. 수정하시겠습니까?")) {
+                        return;
+                    }
+                }
+                localStorage.setItem(english.value, korean.value);
+            }
+
+            function search() {
+                if (!window.localStorage) {
+                    alert("로컬스토리지를 지원하지 않습니다.");
+                    return;
+                }
+                var val = localStorage.getItem(english.value);
+                if (val == null) {
+                    alert(english.value + "는 없는 단어입니다.");
+                } else {
+                    korean.value = val;
+                }
+            }
+
+            function remove() {
+                if (!window.localStorage) {
+                    alert("로컬스토리지를 지원하지 않습니다.");
+                    return;
+                }
+                if (localStorage.getItem(english.value) == null) {
+                    alert(english.value + "는 없는 단어입니다.");
+                    return;
+                }
+                localStorage.removeItem(english.value);
+            }
+
+            function viewAll() {
+                if (!window.localStorage) {
+                    alert("로컬스토리지를 지원하지 않습니다.");
+                    return;
+                }
+                var ret = window.open("2020-2-WebProg-3-HW13-Main2-김동현-32190473.html", )
+            }
+        </script>
+    </body>
+</html>

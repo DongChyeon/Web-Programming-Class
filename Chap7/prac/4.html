@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>일요일은 pink, 다른 요일은 gold 배경</title>
+    </head>
+    <body>
+        <h3>일요일은 pink, 다른 요일은 gold 배경</h3>
+        <hr>
+        <script>
+            var now = new Date();
+            var day = now.getDay();
+
+            if (day == 0) {
+                document.body.style.backgroundColor = "pink";
+            } else {
+                document.body.style.backgroundColor = "gold";
+            }
+            document.write("오늘 : " + now.getDate() + "일");
+        </script>
+    </body>
+</html>

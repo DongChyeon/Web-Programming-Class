@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>눈 내리는 샤갈의 마을</title>
+        <style>
+            body {
+                background-image: url("media/snow.jpg");
+                background-size: 100%;
+                background-repeat: no-repeat;
+            }
+            div.snow {
+                position: absolute;
+                font-size: 40px;
+                color: white;
+                padding: 0px;
+                margin: 0px;
+            }
+        </style>
+        <script>
+            var divArray = new Array(30);
+            var snowArray = new Array(30);
+
+            class Snow {
+                constructor(left, top) {
+                    this.left = top;
+                    this.top = top;
+                }
+
+                fall() {
+                    if (this.top > window.innerHeight - 40) this.top = 0;
+                    this.top += 5;
+                }
+            }
+
+            function init() {
+                for (var i = 0; i < 30; i++) {
+                    var snowLeft = Math.floor(Math.random()*window.innerWidth-40);
+                    var snowTop = Math.floor(Math.random()*window.innerHeight+40);
+                    var snow = "<div class='snow' id=snow" + i + " style='top:" + snowTop + "px; left:" + snowLeft + "px'>*</div>";
+
+				    document.write(snow);                  
+
+                    snowArray[i] = new Snow(snowLeft, snowTop);
+                    divArray[i] = document.getElementById("snow" + i);
+                }
+            }
+
+            function snowFall() {
+                for (var i = 0; i < snowArray.length; i++) {
+                    var snow = snowArray[i];
+                    snow.fall();
+
+                    divArray[i].style.top = snow.top + "px";
+                }
+                setTimeout("snowFall()", 100);
+            }
+        </script>
+    </head>
+    <body onload="snowFall()">
+        <script>
+            init();
+        </script>
+    </body>
+</html>

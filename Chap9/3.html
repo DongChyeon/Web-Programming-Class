@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>addEventListener()를 이용한 리스너 등록</title>
+        <script>
+            var p;
+            function init() {
+                p = document.getElementById("p");
+                p.addEventListener("mouseover", over);
+                p.addEventListener("mouseout", out);
+            }
+            function over() {
+                p.style.backgroundColor="orchid";
+            }
+            function out() {
+                p.style.backgroundColor="white";
+            }
+        </script>
+    </head>
+    <body onload="init()">
+        <h3>addEventListener()를 이요한 리스너 등록</h3>
+        <hr>
+        <p id="p">마우스 올리면 orchid 색으로 변경</p>
+    </body>
+</html>

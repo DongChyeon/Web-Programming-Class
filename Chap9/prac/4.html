@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>이미지 커서 만들기</title>
+    </head>
+    <body>
+        <h3>이미지 커서 만들기</h3>
+        <hr>
+        마우스를 움직이면 이미지로 만든 커서가 마우스를 따라 다닙니다
+        <div id="cursor" style="position: absolute"><img src="../media/circle.png"></div>
+        <script>
+            document.onmousemove = function(e) {
+                var div = document.getElementById("cursor");
+                div.style.left = e.clientX + "px";
+                div.style.top = e.clientY + "px";
+            }
+        </script>
+    </body>
+</html>

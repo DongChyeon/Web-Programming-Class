@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Open Challenge 8</title>
+        <style>
+            table {
+                font: italic 48px Arial, sans-serif;
+                color: blue;
+                border: dotted 1px red; 
+                background: linen;
+                border-collapse: collapse;
+            }
+            tr, td {
+                padding-top: 5px;
+                padding-bottom: 5px;
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+            #result {
+                color: violet;
+                font: italic 24px Arial, sans-serif;
+            }
+        </style>
+        <script>
+            var num1 = 0;
+            var num2 = 0;
+            var num3 = 0;
+            var num1Clicked = false;
+            var num2Clicked = false;
+            var num3Clicked = false;
+
+            function rand1() {
+                var td = document.getElementById("num1");
+                num1 = Math.floor(Math.random() * 3);
+                td.innerHTML = num1;
+                num1Clicked = true;
+            }
+
+            function rand2() {
+                var td = document.getElementById("num2");
+                num2 = Math.floor(Math.random() * 3);
+                td.innerHTML = num2;
+                num2Clicked = true;
+            }
+
+            function rand3() {
+                var td = document.getElementById("num3");
+                num3 = Math.floor(Math.random() * 3);
+                td.innerHTML = num3;
+                num3Clicked = true;
+
+                resultCheck();
+            }
+
+            function resultCheck() {
+                var div = document.getElementById("result");
+                
+                if (num1Clicked && num2Clicked && num3Clicked) {
+                    if (num1 == num2 && num2 == num3) {
+                        result.innerHTML = "Success(click here to do again)";
+                    } else {
+                        result.innerHTML = "fail(click here to do again)";
+                    }
+                }
+            }
+
+            function restart() {
+                var td1 = document.getElementById("num1");
+                var td2 = document.getElementById("num2");
+                var td3 = document.getElementById("num3");
+                var div = document.getElementById("result");
+
+                result.innerHTML = ""
+                num1 = 0;
+                num2 = 0;
+                num3 = 0;
+                num1Clicked = false;
+                num2Clicked = false;
+                num3Clicked = false;
+
+                td1.innerHTML = num1;
+                td2.innerHTML = num2;
+                td3.innerHTML = num3;
+            }
+        </script>
+    </head>
+    <body>
+        <h3>갬블링 게임</h3>
+        각 숫자를 클릭하면 0에서 2사이의 난수로 바뀝니다. 모두 같은 수가 나오면 승리합니다.
+        <hr>
+        <table>
+            <tr>
+                <td id="num1" onclick="rand1()">0</td>
+                <td id="num2" onclick="rand2()">0</td>
+                <td id="num3" onclick="rand3()">0</td>
+            </tr>
+        </table>
+        <br>
+        <div id="result" onclick="restart()"></div>
+    </body>
+</html>

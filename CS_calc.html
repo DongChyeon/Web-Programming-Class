@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>컴퓨터 구조 계산기</title>
+        <script>
+            function mips_calc() {
+                var length = parseInt(document.getElementById("instr").value);
+                var cpi = parseFloat(document.getElementById("cpi").value);
+                var ghz = parseFloat(document.getElementById("cycle").value);
+
+                var exe_time = length * cpi * (1 / (ghz * 1000000000));
+                document.getElementById("time").value = exe_time;
+
+                var mips = (ghz * 1000000000 / cpi) / 1000000;
+                document.getElementById("MIPS").value = mips;
+            }
+            
+            function speedup_calc() {
+                var f = parseFloat(document.getElementById("f").value);
+                var n = parseFloat(document.getElementById("n").value);
+
+                var speedup = 1 / ((1-f) + f/n);
+                document.getElementById("speedup").value = speedup;
+            }
+
+            function cache_calc() {
+                var pc = parseFloat(document.getElementById("pc").value);
+                var tc = parseFloat(document.getElementById("tc").value);
+                var tm = parseFloat(document.getElementById("tm").value);
+
+                var ts = tc + (1-pc) * tm;
+                document.getElementById("ts").value = ts;
+            }
+
+            function track_calc() {
+                var rpm = parseInt(document.getElementById("rpm").value);
+                var ast = parseInt(document.getElementById("ast").value);
+                var dtt = (1 / (rpm / 60)) * 1000;
+                document.getElementById("rdt").value = dtt / 2;
+                document.getElementById("dtt").value = dtt;
+                document.getElementById("tt").value = ast + (dtt / 2) + dtt;
+            }
+        </script>
+    </head>
+    <body>
+        <h3>MIPS 계산기</h3>
+        <table>
+            <tr><td>명령어 개수 </td><td><input id="instr" type="text"></td></tr>
+            <tr><td>CPI </td><td><input id="cpi" type="text"></td></tr>
+            <tr><td>몇 GHz </td><td><input id="cycle" type="text"> <input onclick="mips_calc()" type="button" value="계산"></td></tr>
+            <tr><td>실행 시간(초) </td><td><input id="time" type="text" disabled></td></tr>
+            <tr><td>MIPS </td><td><input id="MIPS" type="text" disabled></td></tr>
+        </table>
+        <hr>
+        <h3>Speedup 계산기</h3>
+        <table>
+            <tr><td>개선 가능 부분 (0~1) </td><td><input id="f" type="text"></td></tr>
+            <tr><td>몇배 개선되느냐 </td><td> <input id="n" type="text"> <input onclick="speedup_calc()" type="button" value="계산"></td></tr>
+            <tr><td>Speedup </td><td>Speedup <input id="speedup" type="text" disabled></td></tr>
+        </table>    
+        <hr>
+        <h3>실제 메모리 접근 시간 계산기</h3>
+        <table>
+            <tr><td>캐시의 적중률 (0~1) </td><td><input id="pc" type="text"></td></tr>
+            <tr><td>캐시의 접근 시간 (나노 초) </td><td> <input id="tc" type="text"></td></tr>
+            <tr><td>메인 메모리의 접근 시간 (나노 초) </td><td><input id="tm" type="text"> <input onclick="cache_calc()" type="button" value="계산"></td></tr>
+            <tr><td>실제 메모리 접근 시간 (나노초) </td><td><input id="ts" type="text" disabled></td></tr>
+        </table>
+        <hr>
+        <h3>트랙 데이터 접근 시간 계산기</h3>
+        <table>
+            <tr><td>RPM </td><td><input id="rpm" type="text"></td></tr>
+            <tr><td>Average seek time (밀리 초) </td><td><input id="ast" type="text"> <input onclick="track_calc()" type="button" value="계산"></td></tr>
+            <tr><td>Rotational delay time (밀리 초) </td><td><input id ="rdt" type="text" disabled></td></tr>
+            <tr><td>Data transfer time (밀리 초) </td><td><input id="dtt" type="text" disabled></td></tr>
+            <tr><td>한 트랙 접근 시간 (밀리 초) </td><td><input id="tt" type="text" disabled></td></tr>
+        </table>      
+    </body>
+</html>

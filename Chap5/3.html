@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>절대 배치</title>
+        <style>
+            div {
+                display: inline-block;
+                position: absolute;
+                border: 1px solid lightgray;
+            }
+            div > p {
+                display: inline-block;
+                position: absolute;
+                height: 20px;
+                width: 15px;
+                background: lightgray;
+            }
+            #fixed {
+                position: fixed;
+                bottom: 10px;
+                right: 10px;
+                width: 100px;
+                padding: 5px;
+                background: red;
+                color: white;
+            }
+        </style>
+    </head>
+    <body>
+        <h3>Merry Christmas!</h3>
+        <hr>
+        <div>
+            <img src="media/spongebob.png" width="200" hegiht="200" alt="스폰지밥">
+            <p style="left:50px; top:30px">M</p>
+            <p style="left:100px; top:0px">E</p>
+            <p style="left:100px; top:80px">R</p>
+            <p style="left:150px; top:110px">R</p>
+            <p style="left:30px; top:130px">Y</p>
+        </div>
+        <div id="fixed">으하하하~ 뭐하누</div>
+    </body>
+</html>

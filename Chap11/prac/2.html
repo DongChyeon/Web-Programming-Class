@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>drawPolygon() 만들기</title>
+        <script>
+            function drawPolygon(ctx, xArray, yArray) {
+                ctx.beginPath();
+                ctx.moveTo(xArray[0], yArray[0]);
+                for (var i=1; i<4; i++) {
+                    ctx.lineTo(xArray[i], yArray[i]);
+                }
+                ctx.closePath();
+                ctx.stroke();
+            }
+        </script>
+    </head>
+    <body>
+        <h3>drawPolygon() 만들기</h3>
+        <hr>
+        <canvas id="myCanvas" width="220" height="220" style="background-color:aliceblue"></canvas>
+        <script>
+            var canvas = document.getElementById("myCanvas");
+            var context = canvas.getContext("2d");
+            var xs = [100, 10, 150, 210];
+            var ys = [10, 100, 200, 60];
+            drawPolygon(context, xs, ys);
+        </script>
+    </body>
+</html>

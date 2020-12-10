@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Open Challenge 12</title>
+        <style>
+            table {
+                background-color: aliceblue;
+            }
+            span {
+                border: 1px solid yellowgreen;
+                padding: 3px;
+            }
+            td, th {
+                padding-left: 3px;
+                padding-right: 3px;
+            }
+        </style>
+    </head>
+    <body>
+        <h3>나의 단어장 모두 출력</h3>
+        <hr>
+        <script>
+            document.write("<table>");
+            for(var i = 0; i < localStorage.length; i++) {
+                var key = localStorage.key(i);
+                var val = localStorage.getItem(key);
+                document.write("<tr>");
+                document.write("<td><span>" + (i+1) + "</span></td>");
+                document.write("<th>" + key + "</th>");
+                document.write("<td>" + val + "</td>");
+                document.write("</tr>");
+            }
+            document.write("</table>");
+        </script>
+    </body>
+</html>

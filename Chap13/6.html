@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>watchPosition()으로 반복 위치 서비스</title>
+    </head>
+    <body>
+        <h3>watchPosition()으로 반복 위치 서비스</h3>
+        <hr>
+        <div id="msg">이곳에 위치 정보 출력</div>
+        <div id="map"></div>
+        <script>
+            if (!navigator.geolocation)
+                alert("지원하지 않음");
+            else {
+                var options = {
+                    enableHighAccuracy: false,
+                    timeout: 5000,
+                    maximumAge: 0
+                };
+
+                var img = new Image();
+                var count = 0;
+                var watchID;
+                watchID = navigator.geolocation.watchPosition(changed, null, options);
+            }
+
+            function changed(position) {
+                if (count == 5) {
+                    navigator.geolocation.clearWatch(watchID);
+                    document.getElementById("msg").innerHTML = "위치 서비스 종료";
+                    return;
+                }
+                var lat = position.coords.latitude;
+                var lon = position.coords.longitude;
+                var acc = position.coords.accuracy;
+
+                lat = lat.toPrecision(6);
+                lon = lon.toPrecision(6);
+
+                var text = "현재 위치 (위도 " + lat + ", 경도 " + lon + ")<br>";
+                text += "정확도 " + acc + "m<br>";
+
+                document.getElementById("msg").innerHTML = text;
+                img.src = "https://maps.googleapis.com/maps/api/staticmap?center=" + lat + "," + lon + "&zoom=13&size=400x300&sensor=false&markers=color:red%7Clabel:C%7C" + lat + "," + lon;
+                if (count == 0)
+                    document.getElementById("map").appendChild(img);
+                count++; 
+            }
+        </script>
+    </body>
+</html>

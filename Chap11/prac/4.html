@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>사진과 이름 출력</title>
+    </head>
+    <body>
+        <h3>사진과 이름 출력</h3>
+        <hr>
+        <canvas id="myCanvas" width="1000" height="500" style="background-color:aliceblue"></canvas>
+        <script>
+            var canvas = document.getElementById("myCanvas");
+            var context = canvas.getContext("2d");
+
+            var img = new Image();
+            img.onload = function () {
+                context.drawImage(img, 30, 30);
+                context.fillStyle = "white";
+                context.fillText("Dongheyon", 130, 130);
+
+                context.font = "italic 50px forte";
+                context.strokeStyle = "black";
+                context.lineWidth = 3;
+                context.strokeText("Donghyeon", 130, 130);
+            }
+            img.src = "../media/android.png";
+        </script>
+    </body>
+</html>

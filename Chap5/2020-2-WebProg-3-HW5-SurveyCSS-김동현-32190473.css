@@ -1,0 +1,35 @@
+html, body {
+	margin : 0px;
+	padding : 0px;
+	background-color : white; 
+	color : black;
+}
+h1 {
+	margin : 0px;
+	padding : 0px;
+	text-align : center;
+	color : black;
+}
+p {
+	text-indent : 1em;
+	font-family : "나눔손글씨 딸에게 엄마가";
+	font-size : 1.5em;
+}
+header {
+	display : block;
+	margin : 0px;
+	padding : 0px;
+	background-color : green;
+}
+section {
+	display : block;
+	background-color : pink;
+	margin : 15px;
+	padding : 10px;
+}
+footer {
+	display : block;
+	background-color : purple;
+	color : black;
+	padding : 15px; 
+}

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>document.write()로 표 만들기</title>
+    </head>
+    <body>
+        <h3>document.write()로 표 만들기</h3>
+        <hr>
+        <script>
+            document.write("<table border='1'>");
+            document.write("<tr><th>n</th>");
+            for (var i = 0; i < 10; i++) {
+                document.write("<td>" + i + "</td>");
+            }
+            document.write("</tr>");
+            document.write("<tr><th>n^2</th>");
+            for (var i = 0; i < 10; i++) {
+                document.write("<td>" + i*i + "</td>");
+            }
+            document.write("</tr>");
+            document.write("</table>");
+        </script>
+    </body>
+</html>

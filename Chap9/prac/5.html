@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>바탕 아무 곳에나 더블 클릭</title>
+        <script>
+            document.ondblclick = function(e) {
+                var r = Math.floor(Math.random() * 255) + 1;
+                var g = Math.floor(Math.random() * 255) + 1;
+                var b = Math.floor(Math.random() * 255) + 1;
+                document.body.style.backgroundColor = "rgb(" + r + "," + g + "," + b + ")";
+            }
+        </script>
+    </head>
+    <body>
+        <h3>바탕 아무 곳에나 더블 클릭</h3>
+        <hr>
+        바탕 아무곳이나 <strong>더블클릭</strong>하면 배경색이 랜덤하게 변합니다.
+    </body>
+</html>

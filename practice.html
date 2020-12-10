@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>셀렉터</title>
+<style>
+    body.main {
+        background: powderblue;
+    }
+    h3.headline {
+        color: brown;
+        text-align: center;
+        font-size: 30px;
+    }
+    h4.headline {
+        color: crimson;
+        text-align: center;
+        font-size: 20px;
+    }
+    #center > strong { color:blue; }
+    #center { background-color: yellow; }
+    #center { text-align: center;}
+    .indent p {
+        text-indent: 5em;
+    }
+    .indent > p > em {
+        color: green;
+    }
+    .indent strong {
+        color: red;
+    }
+</style>
+
+</head>
+
+<body class="main">
+
+ 바디의 배경색은 powderblue 입니다.
+
+<h3 class="headline">여기는 폰트색이 brown 이고, 가운데 정렬, 폰트 크기 30px</h3>
+
+<h4 class="headline">여기는 폰트색이 crimson 이고, 가운데 정렬, 폰트 크기 20px</h4>
+
+<hr>
+
+<div id="center"><strong>배경이 yellow이고 폰트색이 blue이고 가운데 정렬 제목</strong></div>
+
+<div class="indent">
+
+      <p>여기는 5자 들여밀고 문장이 시작 <em>녹색 길</em>을 걷고 산들 무엇하리
+
+      <strong>빨간색 꽃</strong>이 내가 아니듯
+
+      내가 <strong>빨간색 꽃</strong>이
+
+       될 수 없는 지금...</p>
+
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>라디오 버튼을 클릭하면 이미지를 출력합니다</title>
+        <script>
+            function printImg(btn) { 
+                var image = document.getElementById("image");
+                var images = document.getElementsByName("images");
+                var found = null;
+
+                for (var i=0; i<images.length; i++) {
+                    if (images[i].checked == true)
+                        found = images[i];
+                }
+                
+                image.src = found.value;
+            }            
+        </script>
+    </head>
+    <body>
+        <h3>라디오 버튼을 클릭하면 이미지를 출력합니다.</h3>
+        <form>
+            <input type="radio" name="images" onclick="printImg(this)" value="../media/android.png">안드로이드
+            <input type="radio" name="images" onclick="printImg(this)" value="../media/eclipse.png">이클립스
+            <input type="radio" name="images" onclick="printImg(this)" value="../media/kotlin.jpg">코틀린
+        </form>
+        <img id="image">
+    </body>
+</html>

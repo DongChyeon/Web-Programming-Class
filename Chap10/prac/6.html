@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>div 태그에 시계 만들기</title>
+        <style>
+            div {
+                display : inline-block;
+                width : 7em;
+                border : 1px solid gray;
+                background-color : aliceblue;
+                
+            }
+        </style>
+        <script>
+            var timerID = null;
+
+            function startClock() {
+                enableClock();
+                timerID = setInterval("enableClock()", 1000);
+            }
+
+            function enableClock() {
+                var now = new Date();
+                document.getElementById("clock").innerHTML = now.toLocaleTimeString();
+            }
+
+            function checkClock() {
+                if (timerID != null) { 
+                    clearInterval(timerID);
+                    timerID = null;
+                } else   
+                    startClock();
+            }
+        </script>
+    </head>
+    <body onload="startClock()">
+        <h3>div 태그에 시계 만들기</h3>
+        <hr>
+        <div id="clock" onclick="checkClock()"></div>
+    </bdody>
+</html>

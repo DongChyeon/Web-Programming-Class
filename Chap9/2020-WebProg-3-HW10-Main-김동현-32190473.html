@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Open Challenge 9</title>
+        <style>
+            table {
+                border: 1px solid blue;
+                border-collapse: collapse;
+            }
+            td {
+                border: 1px solid blue;
+                width: 50px;
+                height: 50px;
+                padding: 0px;
+            }
+            img {
+                display: block;
+            }
+        </style>
+        <script>
+            var select = 0;
+            var image = new Image();
+            image.src = "media/circle.png";
+
+            function init() {
+                var table = document.getElementById("table");
+
+                for (var i = 0; i < 10; i++) {
+                    var row = document.createElement("tr");
+                    for (var j = 0; j < 10; j++) {
+                        var col = document.createElement("td");
+                        col.innerHTML = "<img src=''>";
+                        row.appendChild(col);
+                    }
+                    table.appendChild(row);
+                }
+                document.images[select].src = image.src;
+                document.images[select].style.visibility = "visible";
+
+                for (var i = 0; i < 100; i++) {
+                    document.images[i].onclick = printImage;
+                    document.images[i].style.visibility = "hidden";
+                }
+                printImage();
+            }
+
+            function printImage() {
+                document.images[select].src = "";
+                document.images[select].style.visibility = "hidden";
+                select = parseInt(Math.random() * 100);
+                document.images[select].src = image.src;
+                document.images[select].style.visibility = "visible";
+            }
+        </script>
+    </head>
+    <body onload="init()">
+        <h3>마우스 클릭 연습</h3>
+        <hr>
+        <table id="table"></table>
+    </body>
+</html>
